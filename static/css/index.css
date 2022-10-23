@@ -1,0 +1,75 @@
+:root {
+    --gufc-green: #224A24;
+    --gufc-yellow: #FACC68;
+    --darker-green: #173119;
+    --opaque-bg: rgba(255, 255, 255, 0.85);
+}
+.top-img {
+    width: 100%;
+    height: 875px;
+    overflow: hidden;
+    color: var(--gufc-yellow);
+}
+#hero {
+    background-image: linear-gradient(0deg, var(--gufc-green) 0%, var(--gufc-yellow) 45%);
+}
+#card-back {
+    background-color: var(--opaque-bg);
+    border-radius: 25px;
+}
+body {
+    color: var(--gufc-green);
+}
+#nav-head {
+    background: var(--gufc-yellow);
+}
+.head-logo {
+    height: 100px;
+}
+.head-logo:hover, .foot-logo:hover  {
+    transform: scale(1.05);
+    transition: all .2s ease;
+}
+#make-donation {
+    background-color: var(--gufc-green);
+    color: var(--gufc-yellow);
+}
+#make-donation:hover {
+    transform: scale(1.05);
+    transition: all 0.1s ease;
+}
+.counter {
+    background-color: var(--gufc-green);
+    height: 100px;
+}
+.foot-logo {
+    height: 3.75rem;
+}
+.bottom-link {
+    text-decoration: none;
+}
+.footer-text {
+    font-size: 1.0125rem;
+}
+.brand-ico:hover {
+    transform: scale(1.25);
+    transition: all 0.2s ease;
+}
+.feature > h3 {
+    color: var(--gufc-green);
+}
+#newsletter {
+    background-color: var(--gufc-yellow);
+    border: none;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+#subtn {
+    border-radius: 5px;
+    background: var(--gufc-yellow);
+    box-shadow: 3px 3px 5px #d5ad58,
+                -3px -3px 5px #ffeb78;
+}
+#subtn:active {
+    background: linear-gradient(145deg, #e1b85e, #ffda6f);
+    border: none;
+}
