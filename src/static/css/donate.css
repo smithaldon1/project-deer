@@ -1,0 +1,21 @@
+.donation-option::before {
+    content: '$';
+}
+
+#radio-back {
+    background: none;
+    border: none;
+}
+#other-input {
+    border-radius: 5px;
+}
+#other-input::-webkit-outer-spin-button,
+#other-input::-webkit-inner-spin-button,
+input[type=number] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield;
+}
+.hrs {
+    background-color: var(--gufc-green);
+}

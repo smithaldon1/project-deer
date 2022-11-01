@@ -1,0 +1,59 @@
+#hero {
+    background: rgb(35,74,36);
+    background: linear-gradient(0deg, rgba(35,74,36,1) 0%, rgb(152, 146, 77) 100%);
+}
+#card-back {
+    background-color: var(--opaque-bg);
+    border-radius: 2.125em;
+}
+#card-back > h1, p {
+    color: var(--gufc-green)
+}
+#main-head {
+    color: var(--gufc-green);
+}
+.make-donation,
+#make-donation {
+    background-color: var(--gufc-green);
+    color: var(--gufc-yellow);
+}
+#make-donation:hover {
+    transform: scale(1.05);
+    transition: all 0.1s ease;
+}
+.counter{
+    background: rgb(152, 146, 77);
+    background: linear-gradient(0deg, rgba(152, 146, 77, 1) 0%, rgba(250,204,104,1) 100%);
+    color: #fff;
+}
+.head {
+    color: var(--gufc-green);
+}
+.progress-bar {
+    background-color: var(--gufc-green);
+}
+.feature > h3 {
+    color: var(--gufc-green);
+}
+#newsletter {
+    background-color: var(--gufc-yellow);
+    border: none;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    color: var(--gufc-green);
+    border-radius: 1.125em;
+}
+#subtn {
+    border-radius: 5px;
+    background: var(--gufc-yellow);
+    box-shadow: 3px 3px 5px #d5ad58,
+                -3px -3px 5px #ffeb78;
+    color: var(--gufc-green);
+}
+#subtn:active {
+    background: linear-gradient(145deg, #e1b85e, #ffda6f);
+    border: none;
+}
+#subtn:hover {
+    transform: scale(.95);
+    transition: all .2s ease;
+}

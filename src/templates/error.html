@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  {{ super() }}
+  <meta name="title" content="Privacy Policy - Greenville United Football Club">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="revisit-after" content="7 days">
+  <title>Processing Error - Greenville United Football Club</title>
+{% endblock head %}
+
+{% block main %}
+<main role="main" style="height: 75vh;">
+  <section>
+    <div class="container-fluid">
+      <div class="container-sm pt-5">
+        <h2 class="pt-5">Processing Error!</h2>
+        <p>Please contact the <a href="mailto:admin@techsmiths.io">Administrator</a>, and we will rectify your issues as quickly as possible.</p>
+        <ul class="list-group">
+            {% for i in range(0, len) %}
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{ e_head }}</div>
+                        {{ e_body }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block footnotes %}{% endblock %}
+
+{% block scripts %}{% endblock %}
