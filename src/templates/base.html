@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Greenville United is going national! Make a donation today to help us bring our love of the sport to Greenville, and all of Eastern North Carolina.">
+  <meta name="keywords" content="greenville, greenville nc, greenville nc soccer, minor league soccer, first flight league, greenville united, greenville united football club, greenville soccer club, greenville soccer team, greenville nc soccer team, greenville nc soccer club, greenville nc soccer team">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content="Greenville United Football Club">
+  <link rel="stylesheet" href="/css/base.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock head %}
+</head>
+<body>
+  <header role="heading" class="navbar sticky-top p-0 shadow-sm">
+    <div class="container-fluid py-3" id="nav-head">
+      <a href="/" class="text-decoration-none mx-auto" id="home-link">
+        <img src="{{ url_for('static', filename='/img/Greenville-Logo.png') }}" alt="Greenville United Logo" class="rounded d-block head-logo">
+      </a>
+      <div class="d-flex justify-content-end">
+        <a href="/donate" class="btn btn-lg px-4 make-donation" id="make-donation-head">Make a donation</a>
+      </div>
+    </div>
+  </header>
+
+  {% block main %}{% endblock %}
+  
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-5 border-top px-md-1 px-4">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <img src="{{ url_for('static', filename='/img/Greenville-Logo.png') }}" alt="Greenville United Logo" class="rounded foot-logo">
+      </a>
+    </div>
+    <ul class="col-md-4 justify-content-center list-unstyled d-flex">
+      <li class="ms-3">
+        <a class="text-muted" href="https://twitter.com/GreenvilleUtd" target="_blank">
+          <img src="{{ url_for('static', filename='/img/twitter.png') }}" alt="Twitter Icon" class="rounded brand-ico" height="28em">
+        </a>
+      </li>
+      <li class="ms-3">
+        <a class="text-muted" href="#" target="_blank">
+          <img src="{{ url_for('static', filename='/img/facebook.png') }}" alt="Facebook Icon" class="rounded brand-ico" height="28em">
+        </a>
+      </li>
+      <li class="ms-3">
+        <a class="text-muted" href="#" target="_blank">
+          <img src="{{ url_for('static', filename='/img/instagram.png') }}" alt="Instagram Icon" class="rounded brand-ico" height="28em">
+        </a>
+      </li>
+    </ul>
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="/privacy-policy" class="nav-link px-2 text-muted">Privacy Policy</a></li>
+      <li class="nav-item"><a href="/toc/website" class="nav-link px-2 text-muted">Terms and Conditions</a></li>
+      <li class="nav-item"><a href="/toc/donation" class="nav-link px-2 text-muted">Donation Policy</a></li>
+      <li class="nav-item"><a href="mailto:admin@greenvilleutd.com" class="nav-link px-2 text-muted">Contact Us</a></li>
+    </ul>
+  </footer>
+  <div class="container footnotes pb-1">
+    {% block footnotes %}{% endblock %}
+  </div>
+  <div class="container-fluid p-3 text-center">
+    © 2022 Greenville United Football Club. All Rights Reserved.
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='/js/base.js') }}"></script>
+  {% block scripts %} {% endblock %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  {{ super() }}
+  <meta name="title" content="Legal Statement | Terms and Conditions - Greenville United Football Club">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="7 days">
+  <title>Legal Statement | Terms and Conditions - Greenville United Football Club</title>
+{% endblock head %}
+
+{% block main %}
+<main role="main" style="height: 75vh;">
+  <section>
+    <div class="container-fluid">
+      <div class="container pt-5 text-center">
+        <h2>{{ htag }}</h2>
+        <p class="pt-3 pb-1">{{ ptag }}</p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block footnotes %}{% endblock %}
+
+{% block scripts %}{% endblock %}

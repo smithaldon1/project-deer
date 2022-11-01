@@ -1,0 +1,41 @@
+/* General Stylings  */
+:root {
+    --gufc-green: #224A24;
+    --gufc-yellow: #FACC68;
+    --darker-green: #173119;
+    --opaque-bg: rgba(255, 255, 255, 0.85);
+}
+body {
+    color: var(--gufc-green);
+}
+
+/* Header Stylings */
+#nav-head {
+    background: var(--gufc-yellow);
+}
+#home-link {
+    position: relative;
+    left: 6em;
+}
+.head-logo {
+    height: 100px;
+}
+.head-logo:hover, .foot-logo:hover  {
+    transform: scale(1.05);
+    transition: all .2s ease;
+}
+
+/* Footer Stylings */
+.foot-logo {
+    height: 3.75rem;
+}
+.bottom-link {
+    text-decoration: none;
+}
+.footer-text {
+    font-size: 1.0125rem;
+}
+.brand-ico:hover {
+    transform: scale(1.25);
+    transition: all 0.2s ease;
+}
