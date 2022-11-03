@@ -8,11 +8,23 @@ $('#radio4').click(() => {
 
 $('.s-radio').click(() => {
     $('#other-input').attr('readonly', 'readonly').addClass('form-control-plaintext');
-})
+});
 
-$('')
+$('#c-btn').click(() => {
+    var amount = $('input[name=donations]:checked').val();
+    var other = $('#radio4').val()
+    if ($('#radio4:checked').length === 1) {
+        $('#p-btn').text("Pay $" + other);
+    } else {
+        $('#p-btn').text("Pay $" + amount);
+    }
+});
 
-function sendPaymentDataToAnet(e) {
+$('input[name=paymentRadio]').change(() => {
+    if ($(this).text === "Paypal"){}
+});
+
+function sendPaymentDataToAnet() {
     var authData = {};
     authData.clientKey = '3k4tmASb94BA92R5ARN3HmELr4xCH4n9gkRrdzW9q6d4RWqvMJnvqaEFH2JK6G5S';
     authData.apiLoginId = '9CnR42ZrQtsQ';
@@ -41,7 +53,7 @@ function sendPaymentDataToAnet(e) {
         }
     });
     console.log('AuthData: ' + authData, 'CardData: ' + cardData);
-}
+};
 
 function paymentFormUpdate(opaqueData) {
     // Update hidden inputs with payment nonce information
@@ -64,4 +76,4 @@ function paymentFormUpdate(opaqueData) {
 
     // Submit Data Form
     $('#paymentForm').submit();
-}
+};

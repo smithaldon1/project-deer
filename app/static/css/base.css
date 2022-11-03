@@ -24,7 +24,14 @@ body {
     transform: scale(1.05);
     transition: all .2s ease;
 }
-
+#make-donation-head {
+    background-color: var(--gufc-green);
+    color: var(--gufc-yellow);
+}
+#make-donation-head:hover {
+    transform: scale(1.05);
+    transition: all 0.1s ease;
+}
 /* Footer Stylings */
 .foot-logo {
     height: 3.75rem;

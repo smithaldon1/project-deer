@@ -10,7 +10,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="language" content="English">
   <meta name="author" content="Greenville United Football Club">
-  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/base.css')}}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock head %}
@@ -22,7 +22,7 @@
         <img src="{{ url_for('static', filename='/img/Greenville-Logo.png') }}" alt="Greenville United Logo" class="rounded d-block head-logo">
       </a>
       <div class="d-flex justify-content-end">
-        <a href="/donate" class="btn btn-lg px-4 make-donation" id="make-donation-head">Make a donation</a>
+        <a href="/donate" class="btn btn-lg px-4" id="make-donation-head">Make a donation</a>
       </div>
     </div>
   </header>

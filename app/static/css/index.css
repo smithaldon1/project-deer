@@ -12,7 +12,6 @@
 #main-head {
     color: var(--gufc-green);
 }
-.make-donation,
 #make-donation {
     background-color: var(--gufc-green);
     color: var(--gufc-yellow);
