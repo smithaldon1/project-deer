@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="errorpage-title pt-5 pb-3"><a class="text-decoration-none" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405" target="_blank">Method Not Allowed (405)</a></h1>
+<div class="errorpage-section">
+  <h4>The request method is known by the server but is not supported by the target resource.</h4>
+  <h4><a href="{{ url_for('main.index') }}">Home</a></h4>
+</div>
+{% endblock %}

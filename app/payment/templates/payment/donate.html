@@ -5,7 +5,7 @@
   <meta name="title" content="Make Donation - Greenville United Football Club">
   <meta name="robots" content="index, nofollow">
   <title>Make Donation - Greenville United Football Club</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='/css/donate.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/donate.css') }}">
   <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
 {% endblock head %}
 XL5Igykg3n7wgflCNZnm3K+q1P7NIkL87HvzLpIK7y+B/T+rgK//PXagDacggyxKFeAz+13AmVxkS7tc0RRUzSahaxQeilWQbyQcmtxNJc+h8Z8vh8Z8vwU/QqbHbFOY5FLkb1rKtXAyL8=
@@ -75,8 +75,8 @@ XL5Igykg3n7wgflCNZnm3K+q1P7NIkL87HvzLpIK7y+B/T+rgK//PXagDacggyxKFeAz+13AmVxkS7tc
         </div>
         <hr class="border-2 opacity-75 hrs">
         <h3 class="py-3">Payment Information</h3>
-        <p class="text-muted py-1">Please select your preferred payment method. Your information is always encrypted before processing, and is safe with us!</p>
-        <div class="form-check">
+        <p class="text-muted py-1">Your information is always encrypted before processing, and is safe with us!</p>
+        <!-- <div class="form-check">Please select your preferred payment method.
           <input class="form-check-input" type="radio" name="paymentRadio" id="p-radio-1" checked>
           <label class="form-check-label" for="p-radio-1">
             Debit/Credit Card
@@ -87,7 +87,7 @@ XL5Igykg3n7wgflCNZnm3K+q1P7NIkL87HvzLpIK7y+B/T+rgK//PXagDacggyxKFeAz+13AmVxkS7tc
           <label class="form-check-label" for="p-radio-2">
             Paypal
           </label>
-        </div>
+        </div> -->
         <div class="card-payment">
           <div class="row g-4">
             <div class="col-md">
@@ -167,16 +167,16 @@ XL5Igykg3n7wgflCNZnm3K+q1P7NIkL87HvzLpIK7y+B/T+rgK//PXagDacggyxKFeAz+13AmVxkS7tc
               </div>
             </div>
           </div>
-        </div>
-        <div class="paypal">
-
+          <div class="row pb-1">
+            <img class="rounded float-start" src="{{ url_for('static', filename='img/payment-logos.jpg') }}" alt="accepted forms of payment" id="pay-logos">
+          </div>
         </div>
         <hr class="border-2 opacity-75 hrs">
         <input type="hidden" name="dataValue" id="dataValue" value=""/>
         <input type="hidden" name="dataDescriptor" id="dataDescriptor" value="" />
         <button class="btn btn-primary btn-lg btn-block" id="c-btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Continue</button>
         <div>
-          <sub><small class="text-muted">By clicking "Continue", you agree to the <a href="/toc/donation" class="text-decoration-none">Terms and Conditions</a></small></sub>
+          <sub><small class="text-muted">By clicking "Continue", you agree to the <a href="/donate/terms-and-conditions" class="text-decoration-none">Terms and Conditions</a></small></sub>
         </div>
         <!-- Are you sure Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
@@ -205,6 +205,6 @@ XL5Igykg3n7wgflCNZnm3K+q1P7NIkL87HvzLpIK7y+B/T+rgK//PXagDacggyxKFeAz+13AmVxkS7tc
 {% block footnotes %}{% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='/js/donate.js') }}"></script>
+<script src="{{ url_for('static', filename='js/donate.js') }}"></script>
 <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
 {% endblock %}

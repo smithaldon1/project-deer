@@ -6,7 +6,7 @@
   <meta name="robots" content="index, follow">
   <meta name="revisit-after" content="7 days">
   <title>Donation - Greenville United Football Club</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 {% endblock head %}
 
 {% block main %}
@@ -46,7 +46,7 @@
       <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
         <div class="feature col text-center">
           <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 rounded">
-            <img src="{{ url_for('static', filename='/img/football.svg') }}" alt="soccer ball" class="rounded p-3" height="150rem">
+            <img src="{{ url_for('static', filename='img/football.svg') }}" alt="soccer ball" class="rounded p-3" height="150rem">
           </div>
           <h3 class="fs-2 pb-2">Youth Skills Camps</h3>
           <p>A portion of your donation will go toward our thriving youth skills camps that operate during the summer.</p>
@@ -56,7 +56,7 @@
         </div>
         <div class="feature col text-center">
           <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 rounded">
-            <img src="{{ url_for('static', filename='/img/trophy.svg') }}" alt="trophy-icon" class="rounded p-3" height="150rem">
+            <img src="{{ url_for('static', filename='img/trophy.svg') }}" alt="trophy-icon" class="rounded p-3" height="150rem">
           </div>
           <h3 class="fs-2 pb-2">League Promotion</h3>
           <p>Your support will help us, as the team works toward our goal of a league promotion. A league promotion would help bring more revenue to our local sponsors and community.</p>
@@ -66,7 +66,7 @@
         </div>
         <div class="feature col text-center">
           <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 rounded">
-            <img src="{{ url_for('static', filename='/img/clipboard-alt.svg') }}" alt="clipboard-icon" class="rounded p-3" height="150rem">
+            <img src="{{ url_for('static', filename='img/clipboard-alt.svg') }}" alt="clipboard-icon" class="rounded p-3" height="150rem">
           </div>
           <h3 class="fs-2 pb-2">Operational Support</h3>
           <p>Your donation will help support the players, staff, and community. Local businesses have been and will continue to be instrumental in our success.</p>
@@ -105,6 +105,6 @@
 
 {% block scripts %}
 {{ super() }}
-<script src="{{ url_for('static', filename='/js/index.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  {{ super() }}
+  <meta name="title" content="Thank You - Greenville United Football Club">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/thank-you.css') }}">
+{% endblock head %}
+
+{% block main %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0&appId=1350607885749663&autoLogAppEvents=1" nonce="tbncQG14"></script>
+<main role="main" style="height: 75vh;">
+  <section>
+    <div class="container-fluid">
+      <div class="container-sm pt-5 thanks text-center">
+        <h2>{{ htag }}</h2>
+        <p class="pt-3 pb-1">{{ ptag }}</p>
+        <h6 class="pb-3">We cannot wait to see you at our next game!</h6>
+        <hr class="border-2 opacity-75 hrs">
+      </div>
+      
+      <div class="container-sm text-center">
+        <h3 class="sharing py-2">Share that you donated!</h3>
+        <div class="container row g-2 justify-content-center">
+          <div class="col-1">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just donated to Greenville United!" data-url="https://greenvilleutd.com/donate" data-via="GreenvilleUtd" data-hashtags="GUFC" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class="col-1">
+            <div class="fb-share-button" data-href="https://greenvilleutd.com/donate" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgreenvilleutd.com%2Fdonate&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block footnotes %}{% endblock %}
+
+{% block scripts %}{% endblock %}

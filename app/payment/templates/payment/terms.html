@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  {{ super() }}
+  <meta name="title" content="Donation Policy - Greenville United Football Club">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="7 days">
+  <title>Donation Policy - Greenville United Football Club</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/d_policy.css') }}">
+{% endblock head %}
+
+{% block main %}
+<main role="main" style="min-height: 75vh;">
+  <section>
+    <div class="container-fluid">
+      <div class="container pt-5">
+        <h2 class="text-center py-3">Donation Policy</h2>
+        <div class="py-2">
+            <h3 class="py-2">Types of donation</h3>
+            <p>Greenville United Football Club (GUFC) accepts monetary donations of any size so long as they consist of:</p>
+            <ul>
+                <li>Checks drawn on U.S. banks</li>
+                <li>Online donations</li>
+                <li>Wire transfers of cash or publicly-traded securities</li>
+            </ul>
+            <p>We make commercially resonable efforts to convert all donations into US dollars upon receipt.</p>
+            <p>GUFC does not generally accept donations of privately-held stock or other illiquid assets (e.g. collectibles). We would consider exceptions if a secondary market exists for liquidating donated assets, or if our Board approves it (e.g. in the case of a large donation of a private stock that is likely to retain value).</p>
+            <p>GUFC may also accept in-kind donations of goods and/or professional services that are related to the programs and operations of GUFC, soley at GUFC's discretion.</p>
+        </div>
+        <div class="py-2">
+            <h3 class="py-2">All gifts to GUFC are unrestricted</h3>
+            <p>All of GUFC's funding is "unrestricted," which means we don't have contractual accounting  "strings attached" that prescribe how the money is spent. A donor may specify desired uses for the donation, but it is up to our team to decide how to spend the money to acheive our goals.</p>
+            <p>Because our donors give unrestricted funding and do not work directly on our programs, they do not have an editorial say in our curriculum, nor access to student data.</p>
+            <p>When we have donors who are also aligned to and contributing to our cause, we often work with them more deeply on communications, joint work or helping the organization. Executives from some of our corporate donors serve on our Board of Directors.</p>
+            <p>Gifts to GUFC are used exclusively to support our program, organization, and community.</p>
+        </div>
+        <div class="py-2">
+            <h3 class="py-2">We reserve the right to choose whether to accept offers of support</h3>
+            <p>In some cases, we will choose not to accept an offer of support. Although we would like to welcome all donors, we will not accept illegal donations or donations that significantly harm our ability to execute on our mission for any reason. To help us manage these exceptions, before we accept a donation from a highly controversial donor, our CEO will seek the advice of our Leadership Team, our Board of directors, select advisors, and (in relevant cases) our Diversity Advisory Council. In most cases, a decision to reject a donation will be made by our CEO. In rare cases where the decision is adequately nuanced, the CEO may ask the Executive Committee of our Board to weigh in and vote to approve or reject a donation. Our decisions may often be complex, difficult, or unpopular. Our guiding principle is to maximize positive impact for children and students in classrooms. If we have reason to doubt the legality of a gift (for example, if we have reason to believe that the funds were criminally obtained, or that accepting the funds would be a violation of sanctions or other laws), we will also consult with counsel.</p>
+        </div>
+        <div class="py-2">
+            <h3 class="py-2">Thank you</h3>
+            <p>We are thankful to all of the donors who have supported us in our mission to give every student in every school the opportunity to learn computer science. The millions of students we have impacted over the years have received an initial introduction to computer science thanks in part to the generosity of these donors. Our ultimate ethical compass on these matters is to optimize for helping and supporting students and classrooms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block footnotes %}{% endblock %}
+
+{% block scripts %}{% endblock %}

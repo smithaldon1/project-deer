@@ -7,10 +7,23 @@ import logging
 from jinja2 import ChoiceLoader, FileSystemLoader
 from flask.logging import default_handler
 from logging.handlers import RotatingFileHandler
+import firebase_admin
+from firebase_admin import credentials, firestore
+from authorizenet import apicontractsv1
 
 
 ### Flask extension objects instantiation ###
 mail = Mail()
+
+### Instantiate Firebase ###
+cred = credentials.Certificate(Config.FIREBASE_CRED)
+default_app = firebase_admin.initialize_app(cred)
+db = firestore.client()
+
+### Instantiate Merchant Auth ###
+merchantAuth = apicontractsv1.merchantAuthenticationType()
+merchantAuth.name = Config.API_LOGIN_ID
+merchantAuth.transactionKey = Config.TRANSACTION_KEY
 
 ### Instantiate Celery ###
 celery = Celery(__name__, broker=Config.CELERY_BROKER_URL, result_backend=Config.RESULT_BACKEND)
@@ -41,7 +54,7 @@ def create_app():
     # Overwrite Flask jinja_loader, using ChoiceLoader
     template_loader = ChoiceLoader([
         app.jinja_loader,
-        FileSystemLoader('static/'),
+        FileSystemLoader('static'),
     ])
     
     return app

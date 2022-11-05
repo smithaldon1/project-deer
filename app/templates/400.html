@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="errorpage-title pt-5 pb-3"><a class="text-decoration-none" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400" target="_blank">Bad Request (400)</a></h1>
+<div class="errorpage-section">
+  <h4>The server cannot or will not process the request due to something that is perceived to be a client error. </h4>
+  <h4><a href="{{ url_for('main.index') }}">Home</a></h4>
+</div>
+{% endblock %}

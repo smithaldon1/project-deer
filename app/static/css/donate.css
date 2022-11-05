@@ -19,3 +19,7 @@ input[type=number] {
 .hrs {
     background-color: var(--gufc-green);
 }
+#pay-logos {
+    max-width: 250px;
+    max-height: 150px;
+}
