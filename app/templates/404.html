@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h1 class="errorpage-title pt-5 pb-3">Page Not Found (404)</h1>
-<div class="errorpage-section">
-  <h4>What you were looking for is just not there!</h4>
-  <h4><a href="{{ url_for('main.index') }}">Home</a></h4>
+<div class="container-sm">
+  <h1 class="errorpage-title pt-5 pb-3">Page Not Found (404)</h1>
+  <div class="errorpage-section">
+    <h4>What you were looking for is just not there!</h4>
+    <h4><a href="{{ url_for('main.index') }}">Home</a></h4>
+  </div>
 </div>
 {% endblock %}

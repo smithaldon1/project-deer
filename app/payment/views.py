@@ -8,7 +8,7 @@ from app import db, merchantAuth
 @payment_blueprint.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        return render_template('payment/donate.html')
+        return render_template('payment/donate.html', title="Make a Donation", )
     if request.method == 'POST':
         # Get form values
         form_data = request.form
@@ -24,22 +24,23 @@ def index():
         payment = create_pay_transaction(amount=amount, form_data=form_data)
         if payment.messages.resultCode == "Ok":
             context = {
-                'title': 'Thank you for your Donation - Greenville United Football Club',
+                'title': 'Thank you for your Donation',
                 'htag': 'Thank you for donating!',
                 'ptag': 'Thank you for supporting the Greenville United Football Club. We really appreciate your willingness and action to support our club.'
             }
-            return render_template('thank-you.html', title=context['title'], htag=context['htag'], ptag=context['ptag'])
+            return render_template('thank-you.html', title=context['title'], htag=context['htag'], ptag=context['ptag'], donated=True)
         else:
             i = 0
             context = {
+                'title': 'Internal Server Error (500)',
                 'e_code': payment.messages.message[i].code,
                 'e_body': payment.messages.message[i].text
             }
-            return render_template('500.html', e_code=context['e_code'], e_body=context['e_body'])
+            return render_template('500.html', title=context['title'], e_code=context['e_code'], e_body=context['e_body'])
 
 @payment_blueprint.route('/terms-and-conditions')
 def show_donation_toc():
-    return render_template('payment/terms.html')
+    return render_template('payment/terms.html', title='Donation Policy')
 
 # @payment_blueprint.route('/payment_success/<string:email>')
 # def donate(email):
@@ -52,7 +53,12 @@ def show_donation_toc():
 #     return render_template('thank-you.html', email=email)
 
 ### Helper Functions ###
-def create_pay_transaction(amount, form_data):    
+def create_pay_transaction(amount, form_data):
+    email = form_data.get(u'email')
+    card_name = form_data.get(u'name')
+    phone = form_data.get(u'phone')
+    amount = form_data.get(u'donations')
+    
     opaqueData = apicontractsv1.opaqueDataType()
     opaqueData.dataDescriptor = form_data['dataDescriptor']
     opaqueData.dataValue = form_data['dataValue']

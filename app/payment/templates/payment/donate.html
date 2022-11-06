@@ -2,14 +2,16 @@
 
 {% block head %}
   {{ super() }}
-  <meta name="title" content="Make Donation - Greenville United Football Club">
+  
   <meta name="robots" content="index, nofollow">
-  <title>Make Donation - Greenville United Football Club</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/donate.css') }}">
   <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
 {% endblock head %}
-XL5Igykg3n7wgflCNZnm3K+q1P7NIkL87HvzLpIK7y+B/T+rgK//PXagDacggyxKFeAz+13AmVxkS7tc0RRUzSahaxQeilWQbyQcmtxNJc+h8Z8vh8Z8vwU/QqbHbFOY5FLkb1rKtXAyL8=
+
 {% block main %}
+<div class="alert alert-danger text-center" role="alert">
+  Caution! This donation form is <strong>NOT</strong> active and any donations you attempt will not be processed. Please contact <a href="mailto:admin@greenvilleutd.com" class="text-decoration-none">admin@greenvilleutd.com</a> for assistance.
+</div>
 <main role="main">
   <div class="container-fluid">
     <div class="container py-3 text-center">
@@ -38,7 +40,7 @@ XL5Igykg3n7wgflCNZnm3K+q1P7NIkL87HvzLpIK7y+B/T+rgK//PXagDacggyxKFeAz+13AmVxkS7tc
               <div class="input-group-text" id="radio-back">
                 <input class="form-check-input mt-0" type="radio" id="radio4" value="" name="donations" aria-label="radio button for custom donation amount">
               </div>
-              <input type="number" class="form-control form-control-plaintext" aria-label="Text input with radio button" id="other-input" readonly>
+              <input type="number" class="form-control form-control-plaintext" aria-label="Text input with radio button" placeholder="Enter custom amount" id="other-input" readonly>
             </div>
           </div>
         </div>
@@ -168,7 +170,7 @@ XL5Igykg3n7wgflCNZnm3K+q1P7NIkL87HvzLpIK7y+B/T+rgK//PXagDacggyxKFeAz+13AmVxkS7tc
             </div>
           </div>
           <div class="row pb-1">
-            <img class="rounded float-start" src="{{ url_for('static', filename='img/payment-logos.jpg') }}" alt="accepted forms of payment" id="pay-logos">
+            <img class="rounded float-start" src="{{ url_for('static', filename='img/payment-logos.JPG') }}" alt="accepted forms of payment" id="pay-logos">
           </div>
         </div>
         <hr class="border-2 opacity-75 hrs">

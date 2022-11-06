@@ -18,10 +18,13 @@
         <h2>{{ htag }}</h2>
         <p class="pt-3 pb-1">{{ ptag }}</p>
         <h6 class="pb-3">We cannot wait to see you at our next game!</h6>
+      </div>
+      {% if donated %}
+      <div class="container-sm">
         <hr class="border-2 opacity-75 hrs">
       </div>
-      
       <div class="container-sm text-center">
+        
         <h3 class="sharing py-2">Share that you donated!</h3>
         <div class="container row g-2 justify-content-center">
           <div class="col-1">
@@ -31,6 +34,7 @@
             <div class="fb-share-button" data-href="https://greenvilleutd.com/donate" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgreenvilleutd.com%2Fdonate&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
           </div>
         </div>
+      {% endif %}
       </div>
     </div>
   </section>

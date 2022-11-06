@@ -69,9 +69,6 @@ function paymentFormUpdate(opaqueData) {
     $('#expm').val("");
     $('#expy').val("");
     $('#cvv').val("");
-    
-    console.log($('#dataDescriptor').val())
-    console.log($('#dataValue').val())
 
     // Submit Data Form
     $('#paymentForm').submit();
