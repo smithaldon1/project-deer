@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  {{ super() }}
+  
+  <meta name="robots" content="index, nofollow">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/donate.css') }}">
+  <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
+{% endblock head %}
+
+{% block main %}
+<div class="alert alert-danger text-center" role="alert">
+  Caution! This donation form is <strong>NOT</strong> active and any donations you attempt will not be processed. Please contact <a href="mailto:admin@greenvilleutd.com" class="text-decoration-none">admin@greenvilleutd.com</a> for assistance.
+</div>
+<main role="main">
+  <div class="container-fluid">
+    <div class="container py-3 text-center">
+      <h1 class="display-3 py-2">Make a donation!</h1>
+      <p class="text-muted">Please complete the form below to make a donation. <br> All form fields are required, unless otherwise stated.</p>
+    </div>
+    <div class="container">
+      <h3 class="py-3">Donation Amount</h3>
+      <p class="text-muted">Any amount will help us reach our goal! How much would you like to donate, today?</p>
+      <form class="needs-validation" id="paymentForm" method="POST" action="/donate">
+        <div class="container py-2 pb-4">
+          <div class="form-check form-check-inline">
+            <input type="radio" name="donations" id="radio1" class="form-check-input s-radio" value="50" checked>
+            <label for="radio1" class="form-check-label donation-option">50</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" name="donations" id="radio2" class="form-check-input s-radio" value="250">
+            <label for="radio2" class="form-check-label donation-option">250</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" name="donations" id="radio3" class="form-check-input s-radio" value="500">
+            <label for="radio3" class="form-check-label donation-option">500</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <div class="input-group">
+              <div class="input-group-text" id="radio-back">
+                <input class="form-check-input mt-0" type="radio" id="radio4" value="" name="donations" aria-label="radio button for custom donation amount">
+              </div>
+              <input type="number" class="form-control form-control-plaintext" aria-label="Text input with radio button" placeholder="Enter custom amount" id="other-input" readonly>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mb-3">
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="fName" id="fName" placeholder="John" required aria-required="true">
+              <label for="fName">First name</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="lName" id="lName" placeholder="Doe" required aria-required="true">
+              <label for="lName">Last name</label>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 pb-3">
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="email" class="form-control" id="email" name="email" placeholder="youremail@example.com" required aria-required="true">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="XXX-XXX-XXXX">
+              <label for="phone">Phone</label>
+              <div class="text-end p-0">
+                <small class="text-muted pe-2">Optional</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="border-2 opacity-75 hrs">
+        <h3 class="py-3">Payment Information</h3>
+        <p class="text-muted py-1">Your information is always encrypted before processing, and is safe with us!</p>
+        <!-- <div class="form-check">Please select your preferred payment method.
+          <input class="form-check-input" type="radio" name="paymentRadio" id="p-radio-1" checked>
+          <label class="form-check-label" for="p-radio-1">
+            Debit/Credit Card
+          </label>
+        </div>
+        <div class="form-check pb-4">
+          <input class="form-check-input" type="radio" name="paymentRadio" id="p-radio-2">
+          <label class="form-check-label" for="p-radio-2">
+            Paypal
+          </label>
+        </div> -->
+        <div class="card-payment">
+          <div class="row g-4">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" name="name" id="name" class="form-control" placeholder="John F. Doe" maxlength="64" required>
+                <label for="name">Name on card</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" name="cardNum" id="card" class="form-control" placeholder="XXXXXXXXXXXXXXXX" maxlength=16 required>
+                <label for="card">Card Number</label>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row py-3 g-4">
+            <div class="col-md">
+              <div class="form-floating">
+                <select class='form-select' name='expm' id='expm' required>
+                  <option value=''>Month</option>
+                  <option value='01'>January</option>
+                  <option value='02'>February</option>
+                  <option value='03'>March</option>
+                  <option value='04'>April</option>
+                  <option value='05'>May</option>
+                  <option value='06'>June</option>
+                  <option value='07'>July</option>
+                  <option value='08'>August</option>
+                  <option value='09'>September</option>
+                  <option value='10'>October</option>
+                  <option value='11'>November</option>
+                  <option value='12'>December</option>
+                </select>
+                <label for="expm">Exp. Month</label> 
+                <div class="invalid-feedback">
+                  Expiration month is required
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class='form-select' name="expy" id="expy" required>
+                  <option value=''>Year</option>
+                  <option value='23'>2023</option>
+                  <option value='24'>2024</option>
+                  <option value='25'>2025</option>
+                  <option value='26'>2026</option>
+                  <option value='27'>2027</option>
+                  <option value='28'>2028</option>
+                  <option value='29'>2029</option>
+                </select>
+                <label for="expy">Exp. Year</label> 
+                <div class="invalid-feedback">
+                  Expiration year is required
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" name="cvv" id="cvv" class="form-control" placeholder="XXXX" maxlength=4 required>
+                <label for="cvv">CVV</label>
+                <div class="invalid-feedback">
+                  Card verification code is required
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" name="zip" id="zip" class="form-control" maxlength="20" placeholder="XXXXX" required>
+                <label for="zip">Zip Code</label>
+                <div class="invalid-feedback">
+                  Billing zip code is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pb-1">
+            <img class="rounded float-start" src="{{ url_for('static', filename='img/payment-logos.JPG') }}" alt="accepted forms of payment" id="pay-logos">
+          </div>
+        </div>
+        <hr class="border-2 opacity-75 hrs">
+        <input type="hidden" name="dataValue" id="dataValue" value=""/>
+        <input type="hidden" name="dataDescriptor" id="dataDescriptor" value="" />
+        <button class="btn btn-primary btn-lg btn-block" id="c-btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Continue</button>
+        <div>
+          <sub><small class="text-muted">By clicking "Continue", you agree to the <a href="/donate/terms-and-conditions" class="text-decoration-none">Terms and Conditions</a></small></sub>
+        </div>
+        <!-- Are you sure Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalLabel">Payment Confirmation</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure you would like to continue with your payment?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" id="p-btn" onclick="sendPaymentDataToAnet()" class="btn btn-primary">Pay</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block footnotes %}{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/donate.js') }}"></script>
+<script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main role="main">
+    <div class="container-sm py-4">
+        <h3>500 - Internal Server Error</h3>
+        <p>Error Code: {{ e_code }}</p>
+        <p>{{ e_body }}</p>
+    </div>
+</main>
+{% endblock %}
